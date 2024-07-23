@@ -9,15 +9,8 @@ The Restaurant API allows users to interact with a database of restaurants, enab
 
 ![image](https://github.com/user-attachments/assets/ebde087e-c54e-4ee5-8818-957b0a38b81d)
 
-## Lambda Authorizer ##
-Upon invocation, the Lambda authorizer performs the following procedure:
+![image](https://github.com/user-attachments/assets/383bc13b-5340-47b9-903a-a0691cfdb907)
 
-1. Receive the token event payload and isolate token string.
-2. Verify the token with third-party identity provider.
-3. Retrieve the scopes from the decoded token.
-4. Iterate over the scopes present in the token and create identity and access management (IAM) policy statements based on entries in the permissions mapping document that contain the scope in question.
-4. Create an IAM policy using the generated IAM policy statements. 
-5. Return complete IAM policy to API Gateway.
 
 
 
