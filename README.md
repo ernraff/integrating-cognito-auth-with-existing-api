@@ -7,8 +7,6 @@ The Restaurant API allows users to interact with a database of restaurants, enab
 
 ## Architecture ##
 
-![image](https://github.com/user-attachments/assets/ebde087e-c54e-4ee5-8818-957b0a38b81d)
-
 ![image](https://github.com/user-attachments/assets/383bc13b-5340-47b9-903a-a0691cfdb907)
 
 
