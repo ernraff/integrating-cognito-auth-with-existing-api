@@ -32,7 +32,7 @@ export class CognitoStack extends cdk.Stack {
       this,
       "Facebook",
       {
-        clientId: "911503144331593",
+        clientId: "facebook-id",
         clientSecret: "facebook-secret",
         userPool: pool,
       }
