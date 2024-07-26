@@ -1,6 +1,6 @@
 # AWS Cognito Integration with Restaurant API #
 
-This project is an extension of the existing Restaurant API, designed to integrate user identity and access management using AWS Cognito. This README provides an overview of the planned implementation.
+This project is an extension of the existing Restaurant API, designed to integrate user identity and access management using AWS Cognito.
 
 ## Overview ##
 The Restaurant API allows users to interact with a database of restaurants, enabling functionalities such as searching for restaurants in New York City by cuisine or unique ID. This project aims to use AWS Cognito User Pool authorizers with a third-party identity provider to secure the restaurant API. 
