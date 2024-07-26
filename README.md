@@ -15,7 +15,7 @@ I wanted to allow federated sign in to my application through a third party iden
 
 I configured my Cognito User Pool in the AWS CDK.  Infrastructure code can be viewed in the file named cognito-stack.ts.  
 
-## User ##
+## User Flow ##
 Upon requesting an access token, the user is redirected to the Cognito hosted UI, where they have the option to sign in using Facebook.  After successful sign in, they are redirected to the specified callback URL, and receive a response with and authorization code grant containing the access token.  The user authenticated user can then use the token to make calls to the API.
 
 ## Testing ##
