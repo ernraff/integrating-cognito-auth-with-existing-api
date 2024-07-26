@@ -1,0 +1,80 @@
+openapi: "3.0.1"
+info:
+  title: "Restaurant API"
+  version: "1.0.0"
+paths:
+  /restaurant-by-cuisine/{cuisine}:
+    get:
+      summary: "Get restaurants by cuisine"
+      description: "Retrieves a list of restaurants based on the specified cuisine."
+      parameters:
+        - name: "cuisine"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+      x-amazon-apigateway-integration:
+        httpMethod: "POST"
+        uri: "RestaurantHandler"
+        passthroughBehavior: "when_no_match"
+        type: "aws_proxy"
+      responses:
+        "200":
+          description: "Successful response"
+          content:
+            application/json:
+              schema:
+                anyOf:
+                  - type: "object"
+                  - type: "array"
+                    items:
+                      type: "object"
+      security: [{ UserPool: [] }]
+
+  /restaurant-by-id/{id}:
+    get:
+      summary: "Get restaurant by ID"
+      description: "Retrieves a restaurant based on the specified ID."
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+      x-amazon-apigateway-integration:
+        httpMethod: "POST"
+        uri: "RestaurantHandler"
+        passthroughBehavior: "when_no_match"
+        type: "aws_proxy"
+      responses:
+        "200":
+          description: "Successful response"
+          content:
+            application/json:
+              schema:
+                anyOf:
+                  - type: "object"
+                  - type: "array"
+                    items:
+                      type: "object"
+      security: [{ UserPool: [] }]
+
+components:
+  securitySchemes:
+    {
+      UserPool:
+        {
+          type: "apiKey",
+          name: "Authorization",
+          in: "header",
+          x-amazon-apigateway-authtype: "cognito_user_pools",
+          x-amazon-apigateway-authorizer:
+            {
+              type: "cognito_user_pools",
+              providerARNs:
+                [
+                  "arn:aws:cognito-idp:us-east-1:010438462003:userpool/us-east-1_GndQlIcQT",
+                ],
+            },
+        },
+    }
